@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    /*background-color:rgba(28, 7, 124, 0.61);*/
+     background-image:url('image/mesh-gradient.png')
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+select{
+    background: rgba(255, 254, 254, 0.69);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.4px);
+    border: 1px solid rgba(255, 254, 254, 1);
+
+    /*box-shadow: -1px -16px 20px -4px rgb(255, 204, 242);*/
 }
+
+textarea{
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.4px);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+
+    /*box-shadow: -1px -16px 20px -4px rgb(255, 204, 242);*/
+}
+
+button{
+    position:relative;
+    overflow:hidden;
+}
+button::before{
+   content:'';
+   position:absolute;
+   top:0;
+   left:-100%;
+   width:100%;
+   height:100%;
+   background: linear-gradient(90deg,transparent,  #ffccff,transparent);
+   transition: ease-in 1s;
+}
+button:hover::before{
+  left:100%;
+}
+.closebtn:hover{
+  background: rgba(255, 255, 255, 0.19);
+   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+    backdrop-filter: blur(1.4px);
+    /*border: 1px solid rgba(255, 255, 255, 0.86);*/
+}
+
